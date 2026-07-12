@@ -17,10 +17,8 @@ a{text-decoration:none;color:inherit}
 
 /* NAV */
 nav{background:#1B3A5C;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
-.nav-logo{display:flex;align-items:center;gap:10px}
-.nav-logo-icon{width:34px;height:34px;background:#C8922A;border-radius:6px;display:flex;align-items:center;justify-content:center}
-.nav-logo-icon svg{width:18px;height:18px;fill:#fff}
-.nav-logo-text{font-size:18px;font-weight:700;color:#fff;letter-spacing:-0.3px}
+.nav-logo{display:flex;align-items:center}
+.nav-logo-img{height:48px;width:auto;display:block}
 .nav-links{display:flex;gap:28px;list-style:none}
 .nav-links a{font-size:14px;color:#B5D4F4;transition:color 0.2s}
 .nav-links a:hover{color:#fff}
@@ -152,6 +150,7 @@ footer{background:#0F2438;padding:48px 40px 32px}
 .footer-inner{max-width:1100px;margin:0 auto}
 .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.08)}
 .footer-brand .footer-logo{font-size:20px;font-weight:700;color:#fff;margin-bottom:10px}
+.footer-logo-img{height:60px;width:auto;display:block;margin-bottom:12px}
 .footer-brand p{font-size:14px;color:#7A9EC0;line-height:1.6;max-width:300px}
 .footer-col h4{font-size:13px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:16px}
 .footer-col a{display:block;font-size:14px;color:#7A9EC0;margin-bottom:10px;transition:color 0.2s}
@@ -186,10 +185,7 @@ footer{background:#0F2438;padding:48px 40px 32px}
 <!-- NAV -->
 <nav>
   <div class="nav-logo">
-    <div class="nav-logo-icon">
-      <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM8 13h8v1H8v-1zm0 3h8v1H8v-1zm0-6h3v1H8v-1z"/></svg>
-    </div>
-    <span class="nav-logo-text">Quotomate</span>
+    <img src="Quotomate_logo.png" alt="Quotomate — Automated Quoting for Aussie Tradies" class="nav-logo-img">
   </div>
   <ul class="nav-links">
     <li><a href="#how">How it works</a></li>
@@ -218,6 +214,9 @@ footer{background:#0F2438;padding:48px 40px 32px}
 
 <!-- HERO -->
 <section class="hero">
+  <div style="margin-bottom:32px">
+    <img src="Quotomate_logo.png" alt="Quotomate" style="height:120px;width:auto;display:block;margin:0 auto">
+  </div>
   <div class="hero-badge">For Australian Tradies</div>
   <h1>Stop writing quotes by hand.<br><span>Just talk.</span></h1>
   <p>Record a 30-second voice message. Get a professional PDF quote in your inbox within 60 seconds. Fully automated. Zero manual steps.</p>
@@ -555,7 +554,7 @@ footer{background:#0F2438;padding:48px 40px 32px}
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="footer-logo">Quotomate</div>
+        <img src="Quotomate_logo.png" alt="Quotomate" class="footer-logo-img">
         <p>Automated quoting for Australian tradies. Record a voice message. Get a professional PDF quote in 60 seconds.</p>
       </div>
       <div class="footer-col">
