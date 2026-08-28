@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Quotomate — Sales Agent Registration</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:#1A1A1A;background:#F7FAFD;line-height:1.6}
+
+/* NAV */
+nav{background:#1B3A5C;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-bolt{display:flex;flex-direction:column;gap:3px;justify-content:center}
+.nav-logo-bolt span{display:block;background:#C8922A;border-radius:2px}
+.nav-logo-bolt .b1{width:28px;height:7px;transform:skewX(-20deg);margin-left:4px}
+.nav-logo-bolt .b2{width:24px;height:7px;transform:skewX(-20deg);margin-left:2px}
+.nav-logo-bolt .b3{width:18px;height:7px;transform:skewX(-20deg);clip-path:polygon(0 0,100% 0,60% 100%,0% 100%)}
+.nav-logo-text-wrap{display:flex;flex-direction:column;line-height:1.1}
+.nav-logo-name{font-size:18px;font-weight:700;color:#fff;letter-spacing:-0.3px}
+.nav-logo-tag{font-size:10px;color:#C8922A;font-weight:600;letter-spacing:0.3px}
+
+/* HERO */
+.hero{background:#1B3A5C;padding:60px 40px;text-align:center}
+.hero-badge{display:inline-block;background:rgba(200,146,42,0.2);color:#C8922A;border:1px solid rgba(200,146,42,0.5);padding:6px 18px;border-radius:20px;font-size:13px;font-weight:700;margin-bottom:20px;letter-spacing:0.5px;text-transform:uppercase}
+.hero h1{font-size:36px;font-weight:700;color:#fff;line-height:1.2;margin-bottom:16px;max-width:600px;margin-left:auto;margin-right:auto}
+.hero h1 span{color:#C8922A}
+.hero p{font-size:17px;color:#B5D4F4;max-width:520px;margin:0 auto;line-height:1.7}
+
+/* OPPORTUNITY STRIP */
+.opp-strip{background:#C8922A;padding:20px 40px}
+.opp-grid{display:flex;justify-content:center;gap:60px;flex-wrap:wrap;max-width:900px;margin:0 auto}
+.opp-item{text-align:center}
+.opp-num{font-size:32px;font-weight:700;color:#fff}
+.opp-label{font-size:13px;color:rgba(255,255,255,0.85);margin-top:4px}
+
+/* MAIN CONTENT */
+.main{max-width:860px;margin:0 auto;padding:60px 40px}
+
+/* SECTION */
+.section-label{font-size:12px;font-weight:700;color:#C8922A;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px}
+.section-title{font-size:28px;font-weight:700;color:#1B3A5C;margin-bottom:12px;line-height:1.2}
+.section-body{font-size:15px;color:#444;line-height:1.8;margin-bottom:32px}
+
+/* COMMISSION TABLE */
+.comm-table{width:100%;border-collapse:collapse;margin-bottom:40px}
+.comm-table th{background:#1B3A5C;color:#fff;padding:14px 20px;font-size:14px;text-align:left;font-weight:700}
+.comm-table td{padding:14px 20px;font-size:14px;border-bottom:1px solid #E0EAF4}
+.comm-table tr:nth-child(even) td{background:#F7FAFD}
+.comm-table tr:last-child td{font-weight:700;color:#1B3A5C;background:#EBF3FB}
+.badge-gold{display:inline-block;background:#FDF6EC;color:#C8922A;border:1px solid #C8922A;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700}
+
+/* HOW IT WORKS */
+.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:40px}
+.step-card{background:#fff;border:1px solid #E0EAF4;border-radius:12px;padding:24px;text-align:center}
+.step-num{width:44px;height:44px;background:#1B3A5C;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:#fff;margin:0 auto 14px}
+.step-title{font-size:15px;font-weight:700;color:#1B3A5C;margin-bottom:8px}
+.step-desc{font-size:13px;color:#666;line-height:1.6}
+
+/* TERMS */
+.terms-box{background:#fff;border:1px solid #E0EAF4;border-radius:12px;padding:32px;margin-bottom:40px}
+.terms-box h3{font-size:18px;font-weight:700;color:#1B3A5C;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #EBF3FB}
+.term-item{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid #F0F4F8}
+.term-item:last-child{border-bottom:none}
+.term-num{width:28px;height:28px;background:#EBF3FB;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#2E6DA4;flex-shrink:0;margin-top:1px}
+.term-text{font-size:14px;color:#444;line-height:1.7}
+.term-text strong{color:#1B3A5C}
+
+/* FORM */
+.form-card{background:#fff;border:2px solid #C8922A;border-radius:16px;overflow:hidden;margin-bottom:40px}
+.form-header{background:#1B3A5C;padding:28px 32px}
+.form-header h3{font-size:22px;font-weight:700;color:#fff;margin-bottom:6px}
+.form-header p{font-size:14px;color:#B5D4F4}
+.form-body{padding:32px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.form-group{margin-bottom:16px}
+.form-label{font-size:12px;font-weight:700;color:#555;display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.6px}
+input[type=text],input[type=email],input[type=tel],select,textarea{width:100%;padding:12px 16px;border:1.5px solid #D0DCE8;border-radius:8px;font-size:14px;color:#1A1A1A;background:#fff;font-family:Arial,Helvetica,sans-serif;transition:border-color 0.2s;outline:none}
+input:focus,select:focus,textarea:focus{border-color:#2E6DA4;box-shadow:0 0 0 3px rgba(46,109,164,0.1)}
+textarea{min-height:100px;resize:vertical}
+.checkbox-group{display:flex;align-items:flex-start;gap:12px;margin-bottom:16px}
+.checkbox-group input[type=checkbox]{width:18px;height:18px;margin-top:2px;flex-shrink:0;accent-color:#1B3A5C}
+.checkbox-label{font-size:14px;color:#444;line-height:1.6}
+.checkbox-label a{color:#2E6DA4}
+.form-submit{width:100%;background:#C8922A;color:#fff;border:none;padding:16px;border-radius:8px;font-size:16px;font-weight:700;cursor:pointer;margin-top:8px;transition:background 0.2s}
+.form-submit:hover{background:#A87820}
+
+/* SUCCESS */
+.success-msg{display:none;background:#E8F5EE;border:2px solid #70AD47;border-radius:12px;padding:40px;text-align:center;margin-bottom:40px}
+.success-icon{font-size:48px;margin-bottom:16px}
+.success-title{font-size:22px;font-weight:700;color:#1E6B3C;margin-bottom:10px}
+.success-text{font-size:15px;color:#2E7D32;line-height:1.7}
+
+/* FOOTER */
+footer{background:#0F2438;padding:32px 40px;text-align:center}
+.footer-logo{font-size:18px;font-weight:700;color:#fff;margin-bottom:8px}
+.footer-copy{font-size:13px;color:#4A6480}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav{padding:0 20px}
+  .hero{padding:48px 20px}
+  .hero h1{font-size:26px}
+  .main{padding:40px 20px}
+  .form-row{grid-template-columns:1fr}
+  .opp-grid{gap:30px}
+  .form-body{padding:20px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-bolt">
+      <span class="b1"></span>
+      <span class="b2"></span>
+      <span class="b3"></span>
+    </div>
+    <div class="nav-logo-text-wrap">
+      <span class="nav-logo-name">Quotomate</span>
+      <span class="nav-logo-tag">Automated Quoting for Aussie Tradies</span>
+    </div>
+  </a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">Sales Agent Program</div>
+  <h1>Earn <span>$74.85 per sale</span> selling a product tradies actually need</h1>
+  <p>Join the Quotomate Sales Agent Program and earn 15% commission on every setup sale. No technical knowledge required — we do the delivery, you do the selling.</p>
+</div>
+
+<!-- OPPORTUNITY STRIP -->
+<div class="opp-strip">
+  <div class="opp-grid">
+    <div class="opp-item">
+      <div class="opp-num">15%</div>
+      <div class="opp-label">Commission per sale</div>
+    </div>
+    <div class="opp-item">
+      <div class="opp-num">$74.85</div>
+      <div class="opp-label">Earned per setup sold</div>
+    </div>
+    <div class="opp-item">
+      <div class="opp-num">$499</div>
+      <div class="opp-label">Product price to tradie</div>
+    </div>
+    <div class="opp-item">
+      <div class="opp-num">No limit</div>
+      <div class="opp-label">On how much you can earn</div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- WHAT IS QUOTOMATE -->
+  <div class="section-label">The Product</div>
+  <div class="section-title">What you are selling</div>
+  <div class="section-body">
+    Quotomate is an automated quoting system built specifically for Australian tradies. A tradie records a 30-second voice message describing a job, emails it to their dedicated address, and receives a professional branded PDF quote in their inbox within 60 seconds — fully automatically.<br><br>
+    The system is set up for each tradie remotely via a 90-minute Zoom call. Once live it runs automatically with zero ongoing effort from the tradie. There is no app to download, no software to install, and no monthly cost to the tradie beyond the optional $19/month support plan.
+  </div>
+
+  <!-- COMMISSION STRUCTURE -->
+  <div class="section-label">Earnings</div>
+  <div class="section-title">Your commission structure</div>
+  <table class="comm-table">
+    <tr>
+      <th>Product</th>
+      <th>Price to Tradie</th>
+      <th>Your Commission (15%)</th>
+      <th>Payment Timing</th>
+    </tr>
+    <tr>
+      <td>One-time setup fee</td>
+      <td>AU$499</td>
+      <td><strong>AU$74.85</strong></td>
+      <td>Within 7 days of tradie payment</td>
+    </tr>
+    <tr>
+      <td>Monthly support plan <span class="badge-gold">Optional upsell</span></td>
+      <td>AU$19/month</td>
+      <td><strong>AU$2.85/month</strong></td>
+      <td>Monthly while client remains active</td>
+    </tr>
+    <tr>
+      <td colspan="2">Example: 10 setup sales + 8 support plans in a month</td>
+      <td><strong>AU$771.30</strong></td>
+      <td>That month's earnings</td>
+    </tr>
+  </table>
+
+  <!-- HOW IT WORKS -->
+  <div class="section-label">The Process</div>
+  <div class="section-title">How it works for you</div>
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-title">Find a tradie</div>
+      <div class="step-desc">Approach tradies in your network — plumbers, electricians, builders, painters, landscapers.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <div class="step-title">Show them the website</div>
+      <div class="step-desc">Direct them to quotomate.com.au. The website explains everything and handles the booking.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <div class="step-title">They book a setup call</div>
+      <div class="step-desc">The tradie books their free 90-minute setup call directly through the website.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">4</div>
+      <div class="step-title">We deliver everything</div>
+      <div class="step-desc">Quotomate handles the entire setup call, delivery, and support. You do nothing further.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">5</div>
+      <div class="step-title">Tradie pays $499</div>
+      <div class="step-desc">Payment is collected during the setup call after the tradie sees it working live.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">6</div>
+      <div class="step-title">You get paid</div>
+      <div class="step-desc">AU$74.85 transferred to your nominated account within 7 days of confirmed payment.</div>
+    </div>
+  </div>
+
+  <!-- TERMS AND CONDITIONS -->
+  <div class="section-label">Terms and Conditions</div>
+  <div class="section-title">Sales Agent Agreement</div>
+  <div class="terms-box">
+    <h3>Quotomate Sales Agent Program — Terms and Conditions</h3>
+    <div class="term-item">
+      <div class="term-num">1</div>
+      <div class="term-text"><strong>Appointment.</strong> Quotomate (ABN 37 534 521 141) appoints the Sales Agent as a non-exclusive independent contractor to introduce potential clients to the Quotomate automated quoting system. The Sales Agent is not an employee of Quotomate and has no authority to enter into contracts on behalf of Quotomate.</div>
+    </div>
+    <div class="term-item">
+      <div class="term-num">2</div>
+      <div class="term-text"><strong>Commission — Setup Fee.</strong> The Sales Agent earns a commission of 15% of the one-time setup fee (AU$499) for each new client they refer who completes a setup call and makes payment. This amounts to AU$74.85 per successful sale. Commission is payable within 7 business days of confirmed client payment.</div>
+    </div>
+    <div class="term-item">
+      <div class="term-num">3</div>
+      <div class="term-text"><strong>Commission — Support Plan.</strong> Where a referred client subscribes to the optional monthly support plan (AU$19/month), the Sales Agent earns an ongoing commission of 15% (AU$2.85/month) for each month the client remains active on the support plan.</div>
+    </div>
+    <div class="term-item">
+      <div class="term-num">4</div>
+      <div class="term-text"><strong>Referral Tracking.</strong> The Sales Agent must inform Quotomate of each referral by emailing contact@quotomate.com.au with the referred tradie's name and contact details before or at the time of booking. Commission will only be paid for referrals that are registered in advance. Quotomate reserves the right to decline a commission claim where a referral was not pre-registered.</div>
+    </div>
+    <div class="term-item">
+      <div class="term-num">5</div>
+      <div class="term-text"><strong>No Guarantee of Sales.</strong> Quotomate makes no guarantee that referred clients will proceed with a purchase. Commission is only payable on completed, paid transactions.</div>
+    </div>
+    <div class="term-item">
+      <div class="term-num">6</div>
+      <div class="term-text"><strong>Representations.</strong> The Sales Agent must accurately represent the Quotomate product and pricing as published on quotomate.com.au. The Sales Agent must not make any promises, guarantees, or representations about the product that are not stated on the website or in materials provided by Quotomate.</div>
+    </div>
+    <div class="term-item">
+      <div class="term-num">7</div>
+      <div class="term-text"><strong>Pricing.</strong> The Sales Agent must not offer or negotiate pricing on behalf of Quotomate. The published price of AU$499 (setup) and AU$19/month (support) is fixed and cannot be varied by the Sales Agent.</div>
+    </div>
+    <div class="term-item">
+      <div class="term-num">8</div>
+      <div class="term-text"><strong>Confidentiality.</strong> The Sales Agent agrees to keep confidential all information about Quotomate's systems, processes, pricing structures, and client information. This obligation continues after termination of this agreement.</div>
+    </div>
+    <div class="term-item">
+      <div class="term-num">9</div>
+      <div class="term-text"><strong>Tax Obligations.</strong> Commission payments are made inclusive of any applicable GST. The Sales Agent is responsible for their own tax obligations arising from commission income. Quotomate will provide a summary of payments made upon request.</div>
+    </div>
+    <div class="term-item">
+      <div class="term-num">10</div>
+      <div class="term-text"><strong>Termination.</strong> Either party may terminate this agreement at any time with 14 days written notice to contact@quotomate.com.au. Commissions earned prior to termination will be paid in full. Ongoing support plan commissions will cease upon termination.</div>
+    </div>
+    <div class="term-item">
+      <div class="term-num">11</div>
+      <div class="term-text"><strong>Governing Law.</strong> This agreement is governed by the laws of South Australia, Australia. Any disputes will be resolved in the courts of South Australia.</div>
+    </div>
+  </div>
+
+  <!-- REGISTRATION FORM -->
+  <div class="form-card">
+    <div class="form-header">
+      <h3>Register Your Interest</h3>
+      <p>Complete the form below. We will email you your Sales Agent Agreement and onboarding kit within one business day.</p>
+    </div>
+    <div class="form-body" id="regForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="fname">First name</label>
+          <input type="text" id="fname" placeholder="First name">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="lname">Last name</label>
+          <input type="text" id="lname" placeholder="Last name">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="femail">Email address</label>
+          <input type="email" id="femail" placeholder="your@email.com.au">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="fphone">Mobile number</label>
+          <input type="tel" id="fphone" placeholder="04XX XXX XXX">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="fstate">State</label>
+        <select id="fstate">
+          <option value="">Select your state</option>
+          <option>South Australia</option>
+          <option>Victoria</option>
+          <option>New South Wales</option>
+          <option>Queensland</option>
+          <option>Western Australia</option>
+          <option>Tasmania</option>
+          <option>Northern Territory</option>
+          <option>ACT</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="fexperience">Do you have sales experience?</label>
+        <select id="fexperience">
+          <option value="">Select an option</option>
+          <option>Yes — in trades or construction industry</option>
+          <option>Yes — in technology or software</option>
+          <option>Yes — in other industries</option>
+          <option>No — but I am confident I can sell this</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="fnetwork">Describe your tradie network</label>
+        <textarea id="fnetwork" placeholder="Tell us about your connections in the trades industry — how many tradies do you know, what types of trades, which areas..."></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="fgoal">How many sales per month are you aiming for?</label>
+        <select id="fgoal">
+          <option value="">Select a target</option>
+          <option>1 to 3 sales per month</option>
+          <option>4 to 8 sales per month</option>
+          <option>9 to 15 sales per month</option>
+          <option>More than 15 sales per month</option>
+        </select>
+      </div>
+      <div class="checkbox-group">
+        <input type="checkbox" id="fterms">
+        <label class="checkbox-label" for="fterms">I have read and agree to the Quotomate Sales Agent Terms and Conditions shown above. I understand I am registering as an independent contractor and not as an employee of Quotomate.</label>
+      </div>
+      <button class="form-submit" onclick="handleSubmit()">Submit My Registration</button>
+    </div>
+    <div class="success-msg" id="successMsg">
+      <div class="success-icon">✅</div>
+      <div class="success-title">Registration received!</div>
+      <div class="success-text">
+        Thanks for registering your interest as a Quotomate Sales Agent.<br><br>
+        We will review your application and email your Sales Agent Agreement and onboarding kit to your nominated email address within one business day.<br><br>
+        In the meantime, explore the product at <strong>quotomate.com.au</strong> so you know it inside out before you start selling.
+      </div>
+    </div>
+  </div>
+
+  <!-- QUESTIONS -->
+  <div style="background:#EBF3FB;border-radius:12px;padding:28px;text-align:center">
+    <p style="font-size:16px;font-weight:700;color:#1B3A5C;margin-bottom:8px">Questions about the program?</p>
+    <p style="font-size:14px;color:#555">Contact us at <a href="mailto:contact@quotomate.com.au" style="color:#2E6DA4;font-weight:700">contact@quotomate.com.au</a> or call <a href="tel:0494560506" style="color:#2E6DA4;font-weight:700">0494 560 506</a></p>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Quotomate</div>
+  <div class="footer-copy">© 2026 Quotomate. ABN 37 534 521 141. All rights reserved. This page is not publicly listed.</div>
+</footer>
+
+<script>
+function handleSubmit(){
+  const fname = document.getElementById('fname').value.trim();
+  const lname = document.getElementById('lname').value.trim();
+  const email = document.getElementById('femail').value.trim();
+  const phone = document.getElementById('fphone').value.trim();
+  const state = document.getElementById('fstate').value;
+  const exp = document.getElementById('fexperience').value;
+  const network = document.getElementById('fnetwork').value.trim();
+  const goal = document.getElementById('fgoal').value;
+  const terms = document.getElementById('fterms').checked;
+
+  if(!fname || !lname || !email || !phone || !state || !exp || !network || !goal){
+    alert('Please complete all fields before submitting.');
+    return;
+  }
+  if(!terms){
+    alert('Please read and agree to the Terms and Conditions to continue.');
+    return;
+  }
+
+  document.getElementById('regForm').style.display='none';
+  document.getElementById('successMsg').style.display='block';
+  document.getElementById('successMsg').scrollIntoView({behavior:'smooth'});
+}
+</script>
+</body>
+</html>
